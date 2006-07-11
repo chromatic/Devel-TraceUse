@@ -1,0 +1,15 @@
+Build.PL
+Changes
+MANIFEST
+META.yml # Will be created by "make dist"
+README
+lib/Devel/TraceUse.pm
+t/00-load.t
+t/boilerplate.t
+t/developer/pod.t
+t/developer/pod-coverage.t
+t/lib/Parent.pm
+t/lib/Child.pm
+t/lib/Sibling.pm
+t/report.t
+t/tracer.pl

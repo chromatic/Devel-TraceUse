@@ -1,0 +1,53 @@
+Devel::TraceUse
+---------------
+
+Show the modules your program loads, recursively.
+
+An apparently simple program may load a lot of modules. That's useful, but
+sometimes you may wonder exactly which part of your program loads which module.
+
+Devel::TraceUse can analyze a program to see which part used which module. I
+recommend using it from the command line:
+
+  $ perl -d:TraceUse your_program.pl
+
+This will display a tree of the modules ultimately used to run your program.
+(It also runs your program with only a little startup cost all the way through
+to the end.)
+
+  Modules used from your_program.pl:
+  Test::MockObject::Extends, line 6 (0.000514)
+    Test::MockObject, line 6 (0.000408)
+      Scalar::Util, line 9 (0.000521)
+        List::Util, line 12 (0.000393)
+          XSLoader, line 24 (0.000396)
+      UNIVERSAL::isa, line 10 (0.000436)
+        UNIVERSAL, line 8 (0.000247)
+      UNIVERSAL::can, line 11 (0.000428)
+      Test::Builder, line 13 (0.000413)
+    Devel::Peek, line 8 (0.000693)
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+  $ perl Build.PL
+  $ perl ./Build
+  $ perl ./Build test
+  $ sudo perl ./Build install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the perldoc
+command.
+
+  $ perldoc Devel::TraceUse
+
+Alternately, read hack #74 in Perl Hacks, published by O'Reilly Media in 2006.
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2006 chromatic.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.

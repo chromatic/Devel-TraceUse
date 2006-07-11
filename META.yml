@@ -1,0 +1,24 @@
+---
+name: Devel-TraceUse
+version: 1.00
+author:
+  - 'chromatic <chromatic@wgz.org>'
+abstract: 'show the modules your program loads, recursively'
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+build_requires:
+  Test::More: 0
+provides:
+  DB:
+    file: lib/Devel/TraceUse.pm
+  Devel::TraceUse:
+    file: lib/Devel/TraceUse.pm
+    version: 1.00
+no_index:
+  package:
+    - Foo::Bar
+generated_by: Module::Build version 0.2801
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
